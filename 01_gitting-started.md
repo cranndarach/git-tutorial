@@ -13,7 +13,7 @@ MinTTY.
 It will also assume you have some folder that you will use as your "project 
 folder" for the purpose of this tutorial. It's okay if it is empty.
 
-## Initializing a repository
+## Opening the project folder
 
 Git repositories are stored within your project's main folder or **root 
 directory**. To start a repository, you will need to open your project's root 
@@ -41,12 +41,72 @@ folder from the file explorer (e.g., Finder or Nautilus).
 Open the project folder in your file explorer. Right click, and select "Git 
 Bash here."
 
+## Initializing a repository
 
+Now that you are in the project's root directory, you can initialize a git 
+repository. To do this enter into the command line:
 
+```sh
+git init
+```
 
+Tada! You have now initialized a blank git repository.
 
+## Stage some files
 
+A git repository tracks and records changes to files. When you have a file in
+your directory that you want to keep track of, you will need to **add** it to 
+the **staging area** and **commit** it to the repository. 
 
+First, let's make a file to stage. In a text editor, create a file in your 
+project's root called `something-important.txt` (realistically, you can call it
+whatever you want). Write something in it, like "This is some important 
+information that I want to keep track of." Then save it. 
 
+Now, in your terminal, enter:
 
+```sh
+git status
+```
 
+You should see `something-important.txt` under "Untracked files." In order for
+git to keep track of it, you'll need to **stage** it. Enter:
+
+```sh
+git add something-important.txt
+```
+
+Now check the status again:
+
+```sh
+git status
+```
+
+You should see your file under "Changes to be committed." That means that git 
+has made a note of the current state of your file. If you make any more changes
+to it that you want to commit, you'll need to `add` it again. You can stage as
+many files as you want prior to a commit. 
+
+## Making your initial commit
+
+A **commit** is sort of like an entry in a log. You have gathered up all of 
+your relevant changes, staged them, and now you are ready to create a snapshot
+of their current state before moving on. When you make a commit, you will write 
+a brief **commit message** about what you changed. Then, at any point in the 
+future, you can come back to that commit, see what was different between before
+and after the commit, and see what you said about it. This is really helpful if 
+you can't remember why you added something, can't decipher an old comment, 
+can't figure out what happened to a few lines—basically, if you're ever coding 
+while tired.
+
+So let's make that first commit. By convention, the message on your first 
+commit to a repository is usually "Initial commit." To make a commit, you run
+the command `git commit` with the **option** `-m` followed by your commit 
+message in quotes. 
+
+```sh
+git commit -m "Initial commit."
+```
+
+Congratulations! You've just made your first commit to a repository. See 
+02_workflow.md for the next steps.
