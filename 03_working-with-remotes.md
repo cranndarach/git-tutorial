@@ -96,9 +96,54 @@ you want, as long as it is before you `push`).
 
 or
 
-* Just edit already-tracked files
+* Edit already-tracked files
 * `git commit -am "My commit message."`
 * `git push`
 
 
+## Pulling from a remote
 
+When you are collaborating with others on one repository, or working across 
+multiple computers, there will likely be times when the remote contains work 
+that is not in your local repository. If your current branch is already tracking
+a remote branch (such as if you have already run a `git push -u origin master` 
+once), then all you need to do to retrieve these changes is run:
+
+```git
+git pull
+```
+
+If you have not set up your branch to track one on the remote, it's just a couple
+more terms:
+
+```git
+git pull origin master
+```
+
+But after that first run, you can do `git pull` from then on.
+
+## Cloning a repository
+
+Sometimes, you might be retrieving a repository that you do not have on your
+local machine. You could run through all the steps of making a blank repo on 
+your computer, adding the remote, and pulling from the remote. But this is all
+accomplished in one command: `git clone [URL]`.
+
+So, to clone a repository, first go to your terminal and `cd` into a folder 
+where you want the new repository to be—it will clone into its own subfolder, so 
+if you have folder called "Projects" or something, that would be suitable. 
+
+Then find the URL of the remote repository. On Github, you can find that by 
+clicking the green "Clone or download" button on a repository's main page, and
+copying the HTTPS URL. 
+
+Then, in your terminal, run `git clone https://github.com/example/example-repo.git`
+
+Now `cd` into the project's folder. (While it is cloning, it will say something
+like "cloning into example-repo/", so then you can do `cd example-repo`.) This
+will already have the remote set up as "origin", so no need to add it again. Now
+you can just pick up the workflow like normal.
+
+### That's all for remotes
+
+Next, try 04_branching-forking-merging.md
