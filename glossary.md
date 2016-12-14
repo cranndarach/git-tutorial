@@ -1,4 +1,4 @@
-# Glossary of git commands
+# 5. Glossary of git commands
 
 ### `git init`
 

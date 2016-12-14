@@ -1,4 +1,4 @@
-# Working with remotes
+# 3. Working with remotes
 
 One great thing about git is easy to host your repositories on a **remote server**
 (online). This makes it easy for you to access it from anywhere, as well as for

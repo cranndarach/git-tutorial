@@ -1,4 +1,4 @@
-# Workflow
+# 2. Workflow
 
 Now that you've made your first commit, you'll want to get into the habit of 
 staging and committing changes as you go.

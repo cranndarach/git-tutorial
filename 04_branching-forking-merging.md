@@ -1,4 +1,4 @@
-# Branching, forking, and merging
+# 4. Branching, forking, and merging
 
 ## Branching
 
