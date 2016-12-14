@@ -125,3 +125,38 @@ git pull upstream/master color-scheme
 
 (to be perfectly honest, I am not 100% sure about this one... I will update it 
 if it turns out to be wrong.)
+
+## Merging
+
+Hopefully, changes you make to one branch will eventually be stable enough for 
+you to incorporate them into the main project. To do this, you'll `merge` the
+development branch with master.
+
+First, make sure you don't have any conflicts, where files on both branches have
+changed, and git doesn't know which one to keep.
+
+Once you've made sure of that, just run `git merge [from] [to]`, only replace
+`[from]` with the name of the branch containing the changes, and replace `[to]` 
+with the name of the branch receiving the changes. So that would be something
+like:
+
+```git
+git merge dev master
+```
+
+## Pull requests
+
+When you've made changes to a fork that you would like the maintainer of the
+upstream repository to consider incorporating into their project, you can submit
+a **pull request** on that repository's page. If the maintainer likes your 
+changes, they will merge them with (or, "pull them into") their repository. This
+is primarily how open source development works.
+
+## That's all!
+
+Congratulations! That is just about all you need to know to use git. 
+
+One last note: There is no need to memorize all of these commands. You might end
+up memorizing them from using them a lot, but in the meantime, that's what things
+like `git [command] --help` are for. You can also see glossary.md for a list of
+the commands covered in this tutorial.

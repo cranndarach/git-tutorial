@@ -1,4 +1,4 @@
-# ~Getting~ Gitting Started
+# ~~Getting~~ Gitting Started
 
 >Initialize a repository and make your first commit.
 
