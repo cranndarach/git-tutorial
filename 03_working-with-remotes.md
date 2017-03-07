@@ -115,7 +115,8 @@ a README or license; those don't apply when you already have a repository that
 you are going to push out.
 
 Once it is created, it will bring you to a page that lists several URLs. Copy
-the HTTPS one. For the sake of example, let's say it's `https://github.com/example/example-repo.git`.
+the SSH one. For the sake of example, let's say it's `git@github.com:example/example-repo.git`.
+(They'll all follow the same pattern of `git@github.com:USERNAME/REPOSITORY.git`.)
 
 Now go over to your terminal and enter:
 
@@ -130,7 +131,7 @@ the name of the new remote that you are adding. You get to pick the name—it
 could really be anything. "origin" is just the convention. And then the URL 
 tells it where to point when fetching or pushing changes on origin.
 
-So now your git repository knows of a remote server, located at `https://github.com/example/example-repo.git`,
+So now your git repository knows of a remote server, located at `git@github.com:example/example-repo.git`,
 and knows that that's what you're referring to when you talk about "origin."
 
 ## Pushing to a remote
