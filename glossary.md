@@ -2,16 +2,15 @@
 
 ### `git init`
 
-Initializes a blank repository.  
-Do this from a project's main folder or **root directory**.
+Initializes a blank repository. Do this from a project's main folder or **root directory**.
 
 ### `git status`
 
-Check out what changes have or have not been staged for committing.
+Check what changes have or have not been staged for committing.
 
 ### `git add [files]`
 
-Stage files to commit.
+Stage files to commit. You can add multiple files separated by spaces. Also supports globbing (e.g., `git add *.txt`).
 
 ### `git commit -m "My commit message."`
 
@@ -19,7 +18,7 @@ Commit your staged changes.
 
 ### `git commit -am "My commit message."`
 
-Commit all tracked changes, regardless of whether they have been staged.
+Commit all tracked changes, regardless of whether they have been staged. Does not commit any new (untracked) files.
 
 ### `git remote add [name] [URL]`
 
@@ -27,12 +26,11 @@ Add a remote repository located at [URL], called [name].
 
 ### `git push -u origin master`
 
-Push the branch "master" to the remote "origin", and set "origin/master" to 
-track the local "master".
+Push the branch "master" to the remote "origin", and set "origin/master" to track the local "master".
 
 ### `git push`
 
-Push to the default location (probably `origin/branch-name`).
+Push to the default remote (probably `origin/branch-name`).
 
 ### `git pull`
 

@@ -1,15 +1,11 @@
 # 2. Workflow
 
-Now that you've made your first commit, you'll want to get into the habit of
-staging and committing changes as you go.
+Now that you've made your first commit, you'll want to get into the habit of staging and committing changes as you go.
 
 ## Staging more changes
 
-Whether the file is brand new, or already being tracked but just modified, you
-can add it to the staging area with `git add [filename].[ext]` (without the
-brackets). You can also list as many files as you want here, separated by
-spaces, and you can use regular expressions. So something like this would be
-valid:
+Whether the file is brand new, or already being tracked but just modified, you can add it to the staging area with `git add [file]` (without the
+brackets). You can also list as many files as you want here, separated by spaces, and you can use glob patterns. So something like this would be valid:
 
 ```sh
 git add file1.txt file2.txt data/*.csv
@@ -17,14 +13,10 @@ git add file1.txt file2.txt data/*.csv
 
 Remember that you can always see what is staged by running `git status`.
 
-You don't have to add everything to the staging area if you don't want to
-commit its changes. So, if you have files that you don't want tracked (see
-"Ignoring files" below), or if you've made changes that you think don't really
-fit with the theme of your current commit, you can just not stage them, and
-then they won't be included in your commit.
+Anything that you do not add to the stage will not be included in the commit. So, if you have files that you don't want tracked (see "Ignoring files," up
+next), or if you've made changes that you think don't really fit with the theme of your current commit, you can just not stage them.
 
-On the flip side, if you forget to stage a file, it won't be included in your
-commit, so double check the `status` before you make a commit just to be safe.
+On the flip side, if you forget to stage a file, it won't be included in your commit, so double check the `status` before you make a commit just to be safe.
 
 ## More commits
 
