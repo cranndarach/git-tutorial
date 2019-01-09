@@ -2,14 +2,17 @@
 
 >Initialize a repository and make your first commit.
 
-## About this tutorial
+## Setup
 
-This tutorial covers git for command line, and assumes that you have git installed on your computer. If you do not, you can [find it
-here](https://git-scm.com/downloads).
+This tutorial mostly covers git for command line, with some notes about GitKraken (a graphical tool for git) and GitHub.
 
-On Windows, make sure to include the command-line tools and enable support for MinTTY.
+If you want to follow along with the tutorial, you should first do the following:
 
-It will also assume you have some folder that you will use as your "project folder" for the purpose of this tutorial. It's okay if it is empty.
+* Install git. You can [find it here](https://git-scm.com/downloads).
+  * On Windows, make sure to include the command-line tools and enable support for MinTTY.
+* Sign up for an account on [GitHub.com](https://github.com) (optional, but recommended).
+* Install [GitKraken](https://gitkraken.com) (optional, but recommended).
+* Create a folder somewhere on your computer to use as your "project folder" for this tutorial.
 
 ## Opening the project folder
 
