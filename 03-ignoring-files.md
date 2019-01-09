@@ -23,3 +23,29 @@ Now run `git status` again. You shouldn't see `ignore-me.txt` listed anymore, bu
 repository so that in the future, you or others won't have to re-write it.
 
 `.gitignore` works just like any other file in terms of git workflow. When you change it, you will want to stage and commit it.
+
+## .git/info/exclude
+
+The exclude file works just like `.gitignore`, but it is actually within the git repository's configuration files. You can find it at `.git/info/excludes`.
+Since changes you make to this file are made directly to the repository itself, not in the project's directory, you do not need to commit it. But, it stays
+with your local repository and is not pushed to a remote.
+
+Whereas `.gitignore` is typically used for "junk" files that are generated in the process of developing your project (e.g., `__pycache__` or `*.[oa]`), the
+exclude file is more for files that are irrelevant to the project, or files that you have license to use but not to share.
+
+A good rule of thumb is that if you think it could apply to someone else too, put it in the `.gitignore`. Otherwise, put it in the exclude file.
+
+## Globally excluding files
+
+If there are some patterns that you want to exclude by default from every repository you make, you could make a global exclude file.
+
+To do this, you'd first make a file in your home directory (`~`) or configuration directory (`~/.config`) called something like `.gitexclude-global` (the name
+is up to you).
+
+Then tell git where to find it by running:
+
+```sh
+git config --global core.excludesfile="~/.gitexclude-global"
+```
+
+Coming up: [Working with Remotes](04-working-with-remotes.md).
