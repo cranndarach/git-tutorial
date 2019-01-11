@@ -1,33 +1,26 @@
-# 3. Working with remotes
+# 4. Working with remotes
 
-One great thing about git is easy to host your repositories on a **remote server**
-(online). This makes it easy for you to access it from anywhere, as well as for
-others to collaborate while keeping track of who made what changes.
+One great thing about git is easy to host your repositories on a **remote server** (online). This makes it easy for you to access it from anywhere, as well as
+for others to collaborate while keeping track of who made what changes.
 
-[GitHub](https://github.com) and [Bitbucket](https://bitbucket.com) are two
-major sites that host git repositories. This tutorial will mostly talk about
-GitHub, but the process is more or less the same for any remote.
+This tutorial will mostly talk about [GitHub](https://github.com), a major site that hosts git repositories, but the process is more or less the same for any
+remote.
 
 ## Setting up SSH
 
 This is an optional step, but it has two significant benefits.
 
-1. It is more secure than the default of using a password (SSH stands for
-"secure shell"!).
-2. It is actually way easier to use than the default once you have it set up,
-because you don't have to enter a password each time you interact with the remote.
+1. It is more secure than the default of using a password (SSH stands for "secure shell"!).
+2. It is actually way easier to use than the default once you have it set up, because you don't have to enter a password each time you interact with the
+remote.
 
-(Note: You can find more complete info on SSH with GitHub
-[here](https://help.github.com/articles/connecting-to-github-with-ssh/). That
-is where most of this info is coming from.)
+(Note: You can find more complete info on SSH with GitHub [here](https://help.github.com/articles/connecting-to-github-with-ssh/). That is where most of this
+info is coming from.)
 
 ### Generate an SSH key
 
-An **SSH Key** is a large random number used for encrypting an decrypting
-messages. It also sort of serves as your identity on the Internet, in that
-services will use it to verify whether a message actually came from you. It
-sounds kind of complicated, but don't worry—your computer handles most of it.
-You just need to set it up.
+An **SSH Key** is a large random number used for encrypting an decrypting messages. It also sort of serves as your identity on the Internet, in that services
+will use it to verify whether a message actually came from you.
 
 First, make sure you don't already have a key. In your terminal, enter:
 
@@ -35,37 +28,25 @@ First, make sure you don't already have a key. In your terminal, enter:
 ls -al ~/.ssh
 ```
 
-If it comes up empty, then you're good to create a new key. If there is something
-there, e.g., `id_rsa` and `id_rsa.pub`, then you can skip to the next step.
+If it comes up empty, then you're good to create a new key. If there is something there, e.g., `id_rsa` and `id_rsa.pub`, then you can skip to the next step.
 
-If you're creating a key, enter the following into your terminal: (replace the
-email address with your actual email address)
+If you're creating a key, enter the following into your terminal: (replace the email address with your actual email address)
 
 ```sh
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 
-That means, "Hey program called ssh-keygen, make a key using the standard (RSA)
-encryption type, make it 4096 bytes, and use my email address as a way to make
+That means, "Hey program called ssh-keygen, make a key using the standard (RSA) encryption type, make it 4096 bytes, and use my email address as a way to make
 it personal."
 
-It will prompt you for a bit more information. You can probably just hit enter
-through the questions, because the defaults are typically fine, unless you have
+It will prompt you for a bit more information. You can probably just hit enter through the questions, because the defaults are typically fine, unless you have
 a particular preference to do otherwise.
 
-Importantly, this generated two files. One is called `id_rsa`, and the other is
-called `id_rsa.pub`. The .pub file is called a **public key.** It is what you
-give to whoever/whatever is going to be decrypting your messages. The one without
-an extension is called a **private key.** You *do not* want to give that key to any web
-site. It is the one you use to encrypt your messages, and then they can only be
-decrypted with your corresponding public key. You can think of a public key as
-being like your driver's license, in that you give it to someone to show that
-you are who you say you are. And then I guess the private key in this analogy
-would be something like a clone of yourself. So if you give someone else a clone
-of you, that clone can go around telling people it's you pretty convincingly.
+Importantly, this generated two files. One is called `id_rsa`, and the other is called `id_rsa.pub`. The .pub file is called a **public key.** It is what you
+give to whoever/whatever is going to be decrypting your messages. The one without an extension is called a **private key.** You *do not* want to give that key
+to anyone or any website. It is the one you use to encrypt your messages, and then they can only be decrypted with your corresponding public key.
 
-Weird dystopic scifi analogies aside, once the key is generated, enter the
-following lines:
+Once the key is generated, enter the following lines:
 
 ```sh
 eval "$(ssh-agent -s)"
@@ -74,8 +55,7 @@ ssh-add ~/.ssh/id_rsa
 
 ### Adding the key to GitHub
 
-Now you need to tell GitHub what your public key is so that it can verify your
-identity when you send it commits.
+Now you need to tell GitHub what your public key is so that it can verify your identity when you send it commits.
 
 First you need to copy your public key. In your terminal, try:
 
@@ -89,11 +69,9 @@ If that returns an error that xclip is not installed, you can just use `cat`:
 cat id_rsa.pub
 ```
 
-to print it to the screen, and then copy it normally (highlight and right-click
-\> copy or Ctrl/Cmd+Shift+C)
+to print it to the screen, and then copy it normally (highlight, right-click, and select copy, or Ctrl/Cmd+Shift+C)
 
-Then go to GitHub, and on the top right, click on the arrow next to your icon,
-and then click "Settings."
+Then go to GitHub, and on the top right, click on the arrow next to your icon, and then click "Settings."
 
 On the left bar, click "SSH and GPG keys."
 
@@ -107,32 +85,26 @@ You should be good!
 
 ## Adding a remote
 
-In order to host your repository on a remote server, you first need to set up a
-repository on that server. On GitHub, you would click the "+" button in the
-upper right, and select "New repository." Name it whatever you want, select
-"public" or "private" as you see fit, and ignore the options to initialize with
-a README or license; those don't apply when you already have a repository that
-you are going to push out.
+In order to host your repository on a remote server, you first need to set up a repository on that server. On GitHub, you would click the "+" button in the
+upper right, and select "New repository." Name it whatever you want, select "public" or "private" as you see fit, and ignore the options to initialize with a
+README or license; those don't apply when you already have a repository that you are going to push out.
 
-Once it is created, it will bring you to a page that lists several URLs. Copy
-the SSH one. For the sake of example, let's say it's `git@github.com:example/example-repo.git`.
-(They'll all follow the same pattern of `git@github.com:USERNAME/REPOSITORY.git`.)
+Once it is created, it will bring you to a page that lists several URLs. Copy the SSH one if you have SSH set up, or the HTTPS one otherwise. For the sake of
+example, let's say it's `https://github.com/example/example-repo.git`. (They'll all follow the same pattern of `https://github.com/USERNAME/REPOSITORY.git` for
+HTTPS, and `git@github.com:USERNAME/REPOSITORY.git` for SSH.)
 
 Now go over to your terminal and enter:
 
 ```sh
-git remote add origin git@github.com:example/example-repo.git
+git remote add origin https://github.com/example/example-repo.git
 ```
 
-Let's break that down. `git` is what tells it that you're doing a git command.
-`remote` says that you are going to be telling it to do something with a remote
-server. `add` says that specifically, you are *adding* a remote. `origin` is
-the name of the new remote that you are adding. You get to pick the name—it
-could really be anything. "origin" is just the convention. And then the URL
-tells it where to point when fetching or pushing changes on origin.
+Let's break that down. `git` is what tells it that you're doing a git command. `remote` says that you are going to be telling it to do something with a remote
+server. `add` says that specifically, you are *adding* a remote. `origin` is the name of the new remote that you are adding. You get to pick the name—it could
+really be anything, but "origin" is the convention. And then the URL tells it where to point when fetching or pushing changes to origin.
 
-So now your git repository knows of a remote server, located at `git@github.com:example/example-repo.git`,
-and knows that that's what you're referring to when you talk about "origin."
+So now your git repository knows of a remote server, located at `https://github.com/example/example-repo.git`, and knows that that's what you're referring to
+when you talk about "origin."
 
 ## Pushing to a remote
 
@@ -144,16 +116,12 @@ The first time you push, you will want to use
 git push -u origin master
 ```
 
-`master` is the name of the **branch** that you are on. Branching will be
-covered later, but in short, it allows you to copy the repo at a certain point
-so that you can make changes in one branch but not another. By default, the main
-branch in a repository is called *master*.
+`master` is the name of the **branch** that you are on. Branching will be covered later, but in short, it allows you to copy the repo at a certain point so
+that you can make changes in one branch but not another. By default, the main branch in a repository is called *master*.
 
-The `-u` option tells it to set up the current branch to track any changes on
-its remote counterpart, and vice versa. It essentially pairs your local branch
-`master` with the remote branch `origin/master`. That way, for future pushes,
-you can just run `git push` by itself without any extra arguments. But nothing
-bad will happen if you still run `git push [-u] origin master` each time.
+The `-u` option means "set upstream," meaning that it tells git to set up the current branch to track any changes on its remote counterpart, and vice versa. It
+pairs your local branch `master` with the remote branch `origin/master` so that for future pushes, you can just run `git push` by itself without any extra
+arguments. But nothing bad will happen if you still run `git push [-u] origin master` each time.
 
 ### Integrating this into your workflow
 
