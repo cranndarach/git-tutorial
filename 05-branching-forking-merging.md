@@ -8,7 +8,7 @@ your project.
 
 To list the branches that currently exist in your repository, run:
 
-```git
+```sh
 git branch
 ```
 
@@ -22,7 +22,7 @@ That means that "master" is the only branch, and the "\*" means it is the one yo
 
 But what if you wanted to make a new branch? Let's call it "dev" for "development". One way you could do this is to run
 
-```git
+```sh
 git branch dev
 ```
 
@@ -35,13 +35,13 @@ dev
 
 Okay, so you made the branch dev, but you're still on master. That means any changes you make will still be made on master, not dev. To switch over to dev, run
 
-```git
+```sh
 git checkout dev
 ```
 
 There is actually a slightly faster way. People used `git branch [new-branch] && git checkout [new-branch]` enough that it got shortened into one command:
 
-```git
+```sh
 git checkout -B dev
 ```
 
@@ -87,13 +87,13 @@ By default, your fork on GitHub will be set as "origin." If you want to pull in 
 convention is to call it "upstream."
 
 
-```git
+```sh
 git remote add upstream URL
 ```
 
 When you want to pull from upstream, run
 
-```git
+```sh
 git pull upstream/master
 ```
 

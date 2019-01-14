@@ -45,10 +45,10 @@ Tada! You have now initialized a blank git repository.
 ## Stage some files
 
 A git repository tracks and records changes to files. When you have a file in your directory that you want to keep track of, you will need to **add** it to the
-**staging area** and **commit** it to the repository. 
+**staging area** and **commit** it to the repository.
 
 First, let's make a file to stage. In a text editor, create a file in your project's root called `something-important.txt` (or whatever you want to call it).
-Write something in it, like "This is some important information that I want to keep track of." Then save it. 
+Write something in it, like "This is some important information that I want to keep track of." Then save it.
 
 Now, in your terminal, enter:
 
@@ -69,7 +69,7 @@ git status
 ```
 
 You should see your file under "Changes to be committed." That means that git has made a note of the current state of your file. If you make any more changes
-to it that you want to commit, you'll need to `add` it again. You can stage as many files as you want prior to a commit. 
+to it that you want to commit, you'll need to `add` it again. You can stage as many files as you want prior to a commit.
 
 ## Making your initial commit
 

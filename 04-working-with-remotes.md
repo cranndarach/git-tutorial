@@ -98,13 +98,13 @@ repository.
 If your current branch is already tracking a remote branch (such as if you have already run a `git push -u origin master` once), then all you need to do is
 run:
 
-```git
+```sh
 git pull
 ```
 
 If you have not set up your branch to track one on the remote, it's just a couple more terms:
 
-```git
+```sh
 git pull origin master
 ```
 
