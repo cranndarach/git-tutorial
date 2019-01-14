@@ -62,6 +62,21 @@ You can have as many branches as you want, and they can branch off of whatever o
 
 Remember that when you are pushing out a new branch, just using `git push` won't work. You'll need to use `git push -u origin branch-name`.
 
+## Merging
+
+Hopefully, changes you make to one branch will eventually be stable enough for you to incorporate them into the main project. To do this, you'll `merge` the
+development branch with master.
+
+First, make sure you don't have any conflicts, where files on both branches have changed, and git doesn't know which one to keep. (If you do end up with a
+merge conflict, I would recommend switching over to a GUI tool like GitKraken to help you resolve it.)
+
+Once you've made sure of that, just run `git merge [from] [to]`, only replace `[from]` with the name of the branch containing the changes, and replace `[to]`
+with the name of the branch receiving the changes. So that would be something like:
+
+```git
+git merge dev master
+```
+
 ## Forking
 
 Forking is sort of like branching an entire project.
@@ -85,26 +100,6 @@ When you want to pull from upstream, run
 
 ```git
 git pull upstream/master
-```
-
-## Merging
-
-Hopefully, changes you make to one branch will eventually be stable enough for
-you to incorporate them into the main project. To do this, you'll `merge` the
-development branch with master.
-
-First, make sure you don't have any conflicts, where files on both branches have
-changed, and git doesn't know which one to keep. (If you do end up with a merge
-conflict, I would recommend switching over to a GUI tool like GitKraken to help
-you resolve it.)
-
-Once you've made sure of that, just run `git merge [from] [to]`, only replace
-`[from]` with the name of the branch containing the changes, and replace `[to]`
-with the name of the branch receiving the changes. So that would be something
-like:
-
-```git
-git merge dev master
 ```
 
 ## Pull requests
