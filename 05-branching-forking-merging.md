@@ -64,47 +64,28 @@ Remember that when you are pushing out a new branch, just using `git push` won't
 
 ## Forking
 
-Forking is kind of like if `git branch` and `git clone` had a baby. It's sort
-of branching an entire project.
+Forking is sort of like branching an entire project.
 
-Normally, forking is something you do on a remote site, like Github (which will
-again be used for the examples). If someone else has a project that you want to
-either contribute to, or just have a copy of to make some changes for yourself,
-you would fork it using the "Fork" button at the upper right of a repository's
-page (below the upper toolbar). This will make a copy of the repository on your
-account.
+Normally, forking is something you do on a remote site, like GitHub (which will again be used for the examples). If someone else has a project that you want to
+either contribute to, or just have a copy of to make some changes for yourself, you would fork it using the "Fork" button at the upper right of a repository's
+page (below the upper toolbar). This will make a copy of the repository on your account.
 
-Then, go to the fork on your account and clone it to your computer like normal
-(find the URL with the "Clone or download" button, then run `git clone URL`).
+Then you can go to the fork on your account and clone it to your computer like you normally would (find the URL with the "Clone or download" button, then run
+`git clone URL`).
 
-Now, one of the first things you'll want to do is make a new branch for your
-changes. This makes it easy to keep track of which changes are yours and which
-changes are from the maintainer.
+By default, your fork on GitHub will be set as "origin." If you want to pull in changes from the original repository, you can add it as another remote. The
+convention is to call it "upstream."
 
-You'll want to give the branch a descriptive name. For example, let's say you
-forked the repo to suggest a new color scheme for the user interface. Run
-
-```git
-git checkout -B color-scheme
-```
-
-The next thing to think about is the remote. By default, your fork on Github is
-"origin." This makes it easy to push your changes to your fork. But you will
-probably also want to pull changes in from the "original" one, commonly called
-"upstream." So go grab the URL from the upstream repo, and run
 
 ```git
 git remote add upstream URL
 ```
 
-Now, when you want to pull from upstream, run
+When you want to pull from upstream, run
 
 ```git
-git pull upstream/master color-scheme
+git pull upstream/master
 ```
-
-(to be perfectly honest, I am not 100% sure about this one... I will update it
-if it turns out to be wrong.)
 
 ## Merging
 
