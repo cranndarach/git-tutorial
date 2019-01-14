@@ -64,18 +64,13 @@ Remember that when you are pushing out a new branch, just using `git push` won't
 
 ## Merging
 
-Hopefully, changes you make to one branch will eventually be stable enough for you to incorporate them into the main project. To do this, you'll `merge` the
-development branch with master.
+When you want to incorporate changes from one branch into another, you can do a `merge`.
 
-First, make sure you don't have any conflicts, where files on both branches have changed, and git doesn't know which one to keep. (If you do end up with a
-merge conflict, I would recommend switching over to a GUI tool like GitKraken to help you resolve it.)
+First, make sure you don't have any conflicts. A conflict happens when files on both branches have changed in the same place, and git doesn't know which one
+you want to keep. (If you do end up with a merge conflict, I would recommend using a GUI tool like GitKraken to help you resolve it.)
 
-Once you've made sure of that, just run `git merge [from] [to]`, only replace `[from]` with the name of the branch containing the changes, and replace `[to]`
-with the name of the branch receiving the changes. So that would be something like:
-
-```git
-git merge dev master
-```
+To merge, fist checkout to the receiving branch (e.g., `git checkout master`). Then run `git merge source`, replacing `source` with the name of the branch
+containing the changes. This will merge changes from `source` into your current branch.
 
 ## Forking
 
@@ -104,17 +99,13 @@ git pull upstream/master
 
 ## Pull requests
 
-When you've made changes to a fork that you would like the maintainer of the
-upstream repository to consider incorporating into their project, you can submit
-a **pull request** on that repository's page. If the maintainer likes your
-changes, they will merge them with (or, "pull them into") their repository. This
-is primarily how open source development works.
+If you've made changes to a fork that you would like the maintainer of the upstream repository to consider incorporating into their project, you can submit a
+**pull request** on that repository's page. If the maintainer likes your changes, they will merge them with (or, "pull them into") their repository. This is
+primarily how open source development works.
 
 ## That's all!
 
 Congratulations! That is just about all you need to know to use git.
 
-One last note: There is no need to memorize all of these commands. You might end
-up memorizing them from using them a lot, but in the meantime, that's what things
-like `git [command] --help` are for. You can also see glossary.md for a list of
-the commands covered in this tutorial.
+One last note: There is no need to memorize all of these commands. You might end up memorizing them from using them a lot, but in the meantime, that's what
+things like `git [command] --help` are for. You can also see glossary.md for a list of the commands covered in this tutorial.
