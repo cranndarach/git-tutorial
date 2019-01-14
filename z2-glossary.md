@@ -8,7 +8,7 @@ Initializes a blank repository. Do this from a project's main folder or **root d
 
 Check what changes have or have not been staged for committing.
 
-### `git add [files]`
+### `git add file1 file2` etc.
 
 Stage files to commit. You can add multiple files separated by spaces. Also supports globbing (e.g., `git add *.txt`).
 
@@ -20,9 +20,9 @@ Commit your staged changes.
 
 Commit all tracked changes, regardless of whether they have been staged. Does not commit any new (untracked) files.
 
-### `git remote add [name] [URL]`
+### `git remote add name URL`
 
-Add a remote repository located at [URL], called [name].
+Add a remote repository located at "URL", called "name".
 
 ### `git push -u origin master`
 
@@ -36,9 +36,9 @@ Push to the default remote (probably `origin/branch-name`).
 
 Pull changes from the remote tracked branch to the current branch.
 
-### `git clone [URL]`
+### `git clone URL`
 
-Copy the repository located at [URL] here.
+Copy the repository located at URL here.
 
 ### `git branch`
 
@@ -56,6 +56,6 @@ Switch to the branch `branch-name`.
 
 Create a branch called `branch-name` and switch to it.
 
-### `git merge [from] [to]`
+### `git merge source`
 
-Update branch `to` with the changes found on branch `from`.
+Update current branch with the changes found on branch `source`.
