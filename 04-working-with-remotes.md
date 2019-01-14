@@ -91,18 +91,18 @@ or
 
 ## Pulling from a remote
 
-When you are collaborating with others on one repository, or working across
-multiple computers, there will likely be times when the remote contains work
-that is not in your local repository. If your current branch is already tracking
-a remote branch (such as if you have already run a `git push -u origin master`
-once), then all you need to do to retrieve these changes is run:
+When you are collaborating with others on one repository, or working across multiple computers, there will likely be times when the remote contains work that
+is not in your local repository. Just like you `push` changes from your local repository to the remote, you can `pull` changes from the remote to your local
+repository.
+
+If your current branch is already tracking a remote branch (such as if you have already run a `git push -u origin master` once), then all you need to do is
+run:
 
 ```git
 git pull
 ```
 
-If you have not set up your branch to track one on the remote, it's just a couple
-more terms:
+If you have not set up your branch to track one on the remote, it's just a couple more terms:
 
 ```git
 git pull origin master
@@ -112,26 +112,17 @@ But after that first run, you can do `git pull` from then on.
 
 ## Cloning a repository
 
-Sometimes, you might be retrieving a repository that you do not have on your
-local machine. You could run through all the steps of making a blank repo on
-your computer, adding the remote, and pulling from the remote. But this is all
-accomplished in one command: `git clone [URL]`.
+Sometimes, you might be retrieving a repository that you do not have on your local machine. You *could* run through all the steps of making a blank repo on
+your computer, adding the remote, and pulling from the remote. But you can also use `git clone` to do all that in one command.
 
-So, to clone a repository, first go to your terminal and `cd` into a folder
-where you want the new repository to be—it will clone into its own subfolder, so
-if you have folder called "Projects" or something, that would be suitable.
+So, to clone a repository, first find the URL of the remote repository. On GitHub, you can find that by clicking the green "Clone or download" button on a
+repository's main page, and copying the HTTPS URL (or SSH if you have it set up).
 
-Then find the URL of the remote repository. On GitHub, you can find that by
-clicking the green "Clone or download" button on a repository's main page, and
-copying the SSH URL.
+Then go to your terminal and `cd` into a folder where you want the new repository to be—it will clone into its own subfolder.
 
-Then, in your terminal, run `git clone git@github.com:example/example-repo.git`
+Then run `git clone URL` (replacing "URL" with the actual URL).
 
-Now `cd` into the project's folder. (While it is cloning, it will say something
-like "cloning into example-repo/", so then you can do `cd example-repo`.) This
-will already have the remote set up as "origin", so no need to add it again. Now
-you can just pick up the workflow like normal.
+Now `cd` into the project's folder. It will already have the remote set up as "origin", so no need to add it again. Now you can just pick up the workflow
+like normal.
 
-### That's all for remotes
-
-Next, try 04_branching-forking-merging.md
+Up next: [05-branching-forking-merging.md](05-branching-forking-merging.md)
