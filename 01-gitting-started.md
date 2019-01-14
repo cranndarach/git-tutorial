@@ -1,7 +1,5 @@
 # 1. ~~Getting~~ Gitting Started
 
->Initialize a repository and make your first commit.
-
 ## Setup
 
 This tutorial mostly covers git for command line, with some notes about GitKraken (a graphical tool for git) and GitHub.
