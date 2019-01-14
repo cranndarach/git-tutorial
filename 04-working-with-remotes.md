@@ -55,7 +55,7 @@ arguments. But nothing bad will happen if you still run `git push [-u] origin ma
 Keep in mind that `commit`ting and `push`ing are **two separate steps.** You cannot `push` changes that are not `commit`ted, and `commit`ting by itself does
 not `push`.
 
-## Review so far
+## Workflow so far
 
 Let's take a break to review the git flow so far. Note that the order is mostly only locally-dependent (you have to stage before or during the `commit`, not
 after), but not so much globally-dependent (you can add a remote server whenever you want, as long as it is before you `push`).
@@ -66,14 +66,15 @@ after), but not so much globally-dependent (you can add a remote server whenever
 
 ### Add a remote
 
-* Initialize a repo on the remote (e.g., GitHub) `git remote add origin git@github.com:example/example-repo.git`
+* Initialize a repo on the remote (e.g., GitHub)
+* Register it with your local repository: `git remote add origin git@github.com:example/example-repo.git`
 
 ### Make your first commits and pushes
 
 * Create some files
-* `git add [relevant files]`
-* `git commit -m "Initial commit."`
-* `git push -u origin master`
+* Stage them: `git add [relevant files]`
+* Commit the changes: `git commit -m "Initial commit."`
+* Update the remote: `git push -u origin master`
 
 ### Let the workflow flow!
 
