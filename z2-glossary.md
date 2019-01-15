@@ -38,7 +38,7 @@ Pull changes from the remote tracked branch to the current branch.
 
 ### `git clone URL`
 
-Copy the repository located at URL here.
+Copy the repository located at "URL" here.
 
 ### `git branch`
 
