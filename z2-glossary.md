@@ -30,7 +30,7 @@ Push the branch "master" to the remote "origin", and set "origin/master" to trac
 
 ### `git push`
 
-Push to the default remote (probably `origin/branch-name`).
+Push recent commits to the default remote (probably `origin/branch-name`).
 
 ### `git pull`
 
