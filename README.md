@@ -10,4 +10,8 @@
 4. [Working with remotes](04-working-with-remotes.md)
 5. [Branching, forking, and merging](05-branching-forking-merging.md)
 
-Glossary of git commands
+### Additional resources
+
+1. [Setting up SSH](z1-setting-up-ssh.md)
+2. [Glossary of git commands](z2-glossary.md)
+3. [Tips](z3-tips.md)
